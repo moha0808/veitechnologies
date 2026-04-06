@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-unbounded: 'Unbounded', cursive;
+}
+
+body {
+  font-family: var(--font-inter);
+  scroll-behavior: smooth;
+  @apply bg-slate-950 text-slate-100 antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-unbounded);
+}
+
+/* Custom styles for the "Solar" theme */
+.solar-gradient {
+  background: linear-gradient(135deg, #fde047 0%, #eab308 50%, #ca8a04 100%);
+}
+
+.text-solar {
+  @apply bg-clip-text text-transparent solar-gradient;
+}
+
+.glass-morphism {
+  @apply bg-slate-900/40 backdrop-blur-md border border-slate-800/50 rounded-2xl shadow-xl;
+}
+
+.hover-glow {
+  @apply transition-all duration-300 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] hover:-translate-y-1;
+}
+
+/* Smooth transition for all interactive elements */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
