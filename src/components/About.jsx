@@ -48,40 +48,40 @@ const About = () => {
               subtitle="VEI Technologies provides IT consulting, web applications and outsourcing services. We deliver business solutions by modernizing critical applications and empowering the next generation of engineers across India."
             />
             
-            <div className="flex flex-col gap-3 my-[24px_32px] mt-6">
+            <div className="flex flex-col gap-5 my-10">
               {[
                 { icon: "🏛️", title: "Board of Study Member", text: "Affiliated with top autonomous engineering colleges" },
                 { icon: "🏭", title: "Industry Supported Labs", text: "Labs established at CMS, Adhiparasakthi, Muthayammal & EPMCE" },
                 { icon: "🌍", title: "International Recognition", text: "Doctorate by Global Peace University, GAF USA – 2018" }
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3.5 p-[14px_18px] rounded-[12px] bg-[#1565f5]/10 border border-[#1565f5]/15">
-                  <div className="w-[32px] h-[32px] rounded-[8px] bg-[#1565f5] flex items-center justify-center text-[0.9rem] flex-shrink-0">{item.icon}</div>
-                  <div className="text-[0.88rem] text-[#b8cce8] leading-[1.5]">
-                    <strong className="block text-white font-bold">{item.title}</strong>{item.text}
+                <div key={i} className="flex items-center gap-4 p-5 rounded-[16px] bg-[#1565f5]/10 border border-[#1565f5]/15 hover:bg-[#1565f5]/15 transition-all">
+                  <div className="w-[36px] h-[36px] rounded-[10px] bg-[#1565f5] flex items-center justify-center text-[1rem] flex-shrink-0">{item.icon}</div>
+                  <div className="text-[0.9rem] text-[#b8cce8] leading-[1.6]">
+                    <strong className="block text-white font-bold mb-0.5">{item.title}</strong>{item.text}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div id="team" className="bg-white/8 border border-white/12 rounded-[24px] p-6 mb-8 shadow-inner">
-              <div className="flex items-center gap-4 mb-[18px]">
-                <img src="/assets/images/vei.jpeg" alt="VEI logo" className="w-[58px] h-[58px] rounded-[16px] object-fit-contain bg-white p-2" />
+            <div id="team" className="bg-white/8 border border-white/12 rounded-[28px] p-8 mb-10 shadow-inner">
+              <div className="flex items-center gap-5 mb-6">
+                <img src="/assets/images/vei.jpeg" alt="VEI logo" className="w-[64px] h-[64px] rounded-[18px] object-contain bg-white p-2" />
                 <div>
-                  <div className="font-bricolage text-[1.15rem] font-extrabold text-white">VEI Technologies Team</div>
-                  <div className="text-[0.86rem] text-white/70 mt-1 max-w-[420px] leading-[1.5]">Our trainers and mentors drive real-world learning at institutions across India.</div>
+                  <div className="font-bricolage text-[1.25rem] font-extrabold text-white">VEI Technologies Team</div>
+                  <div className="text-[0.88rem] text-white/70 mt-1 max-w-[420px] leading-[1.6]">Our trainers and mentors drive real-world learning at institutions across India.</div>
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {[
                   { initials: 'BE', name: 'Dr. B. Ezhilavan', role: 'Managing Director' },
                   { initials: 'IT', name: 'Faculty Leads', role: 'AI, IoT, EV, CyberSec' },
                   { initials: 'ST', name: 'Student Mentors', role: 'Hands-on projects' }
                 ].map((member, i) => (
-                  <div key={i} className="flex gap-3 items-center bg-white/5 border border-white/8 rounded-[16px] p-3.5 hover:bg-white/8 transition-colors">
-                    <div className="w-[42px] h-[42px] rounded-[12px] bg-gradient-to-br from-[#1565f5] to-[#5aaeff] flex items-center justify-center font-bold text-[0.95rem] text-white flex-shrink-0">{member.initials}</div>
+                  <div key={i} className="flex gap-4 items-center bg-white/5 border border-white/8 rounded-[18px] p-4 hover:bg-white/8 transition-all hover:-translate-y-1">
+                    <div className="w-[48px] h-[48px] rounded-[14px] bg-gradient-to-br from-[#1565f5] to-[#5aaeff] flex items-center justify-center font-bold text-[1rem] text-white flex-shrink-0 shadow-lg">{member.initials}</div>
                     <div>
-                      <strong className="block text-[0.9rem] text-white font-bold">{member.name}</strong>
-                      <span className="block text-[0.78rem] text-[#b8cce8] leading-[1.4]">{member.role}</span>
+                      <strong className="block text-[0.92rem] text-white font-bold">{member.name}</strong>
+                      <span className="block text-[0.8rem] text-[#b8cce8] leading-[1.4]">{member.role}</span>
                     </div>
                   </div>
                 ))}
