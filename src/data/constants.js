@@ -2,7 +2,7 @@ export const profile = {
   name: "Dr. B. Ezhilavan",
   role: "MANAGING DIRECTOR",
   company: "VEI TECHNOLOGIES PVT. LTD",
-  email: "info@veitechnologies.tech",
+  email: "veitechinfo2024@gmail.com",
   phone: "+91 90037 85766",
   location: "Chennai, Tamil Nadu, India",
   summary: "A visionary entrepreneur who has transformed IT education across India. Awarded a Doctorate by Global Peace University (GAF, USA) in 2018 for social contributions via VEI Technologies (2010–2018).",

@@ -22,17 +22,32 @@ const Contact = () => {
             
             <div className="flex flex-col gap-3 mt-7">
               {[
-                { icon: "👤", label: profile.name, sub: "Managing Director, VEI Technologies" },
-                { icon: "📞", label: "Phone / WhatsApp", sub: profile.phone },
+                { icon: "👤", label: "Managing Director", sub: profile.name },
+                { icon: "✉️", label: "Email Address", sub: profile.email, href: `mailto:${profile.email}` },
+                { icon: "📞", label: "Phone / WhatsApp", sub: profile.phone, href: `tel:${profile.phone.replace(/\s+/g, '')}` },
                 { icon: "📍", label: "Location", sub: profile.location },
-                { icon: "🎓", label: "Services", sub: "IT Consulting · Training · MOU Partnerships" }
               ].map((item, i) => (
-                <div key={i} className="flex gap-3.5 items-center bg-white/4 border border-white/7 p-4 px-5 rounded-[14px] hover:border-[#1565f5]/35 transition-all transition-colors duration-200">
-                  <div className="w-[42px] h-[42px] rounded-[11px] bg-[#1565f5]/15 flex items-center justify-center text-[1.1rem] flex-shrink-0">{item.icon}</div>
-                  <div>
-                    <h4 className="text-[0.85rem] font-bold text-white mb-0.5">{item.label}</h4>
-                    <p className="text-[0.8rem] text-[#b8cce8]">{item.sub}</p>
-                  </div>
+                <div key={i} className="group transition-all duration-300">
+                  {item.href ? (
+                    <a 
+                      href={item.href}
+                      className="flex gap-3.5 items-center bg-white/4 border border-white/7 p-4 px-5 rounded-[14px] hover:border-[#1565f5]/35 hover:bg-white/7 transition-all flex-shrink-0"
+                    >
+                      <div className="w-[42px] h-[42px] rounded-[11px] bg-[#1565f5]/15 flex items-center justify-center text-[1.1rem] flex-shrink-0 group-hover:bg-[#1565f5]/25 transition-colors">{item.icon}</div>
+                      <div>
+                        <h4 className="text-[0.85rem] font-bold text-white mb-0.5">{item.label}</h4>
+                        <p className="text-[0.8rem] text-[#b8cce8] group-hover:text-white transition-colors">{item.sub}</p>
+                      </div>
+                    </a>
+                  ) : (
+                    <div className="flex gap-3.5 items-center bg-white/4 border border-white/7 p-4 px-5 rounded-[14px] hover:border-[#1565f5]/35 transition-all">
+                      <div className="w-[42px] h-[42px] rounded-[11px] bg-[#1565f5]/15 flex items-center justify-center text-[1.1rem] flex-shrink-0">{item.icon}</div>
+                      <div>
+                        <h4 className="text-[0.85rem] font-bold text-white mb-0.5">{item.label}</h4>
+                        <p className="text-[0.8rem] text-[#b8cce8]">{item.sub}</p>
+                      </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -46,22 +61,52 @@ const Contact = () => {
             className="bg-[#0a1f47] border border-white/8 rounded-[24px] p-9 shadow-2xl"
           >
             <h3 className="font-bricolage text-[1.4rem] font-bold text-white mb-6">Send a Message</h3>
-            <div className="space-y-4">
+            <form 
+              action="https://formsubmit.co/veitechinfo2024@gmail.com" 
+              method="POST"
+              className="space-y-4"
+            >
+              {/* FormSubmit Configuration */}
+              <input type="hidden" name="_subject" value="New Contact Form Submission - VEI Technologies" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_captcha" value="false" />
+
               <div className="group">
                 <label className="block text-[0.72rem] font-bold tracking-[0.09em] uppercase text-[#5aaeff] mb-1.5 px-1">Full Name</label>
-                <input type="text" placeholder="Your full name" className="w-full bg-white/4 border border-white/10 rounded-[10px] p-3 color-white outline-none focus:border-[#1565f5] transition-all text-[0.88rem]" />
+                <input 
+                  type="text" 
+                  name="name"
+                  placeholder="Your full name" 
+                  required
+                  className="w-full bg-[#04122a] border border-white/10 rounded-[12px] p-4 text-white placeholder:text-white/30 outline-none focus:border-[#1565f5] focus:ring-1 focus:ring-[#1565f5] transition-all text-[0.9rem] shadow-inner" 
+                />
               </div>
               <div className="group">
                 <label className="block text-[0.72rem] font-bold tracking-[0.09em] uppercase text-[#5aaeff] mb-1.5 px-1">Institution / Organization</label>
-                <input type="text" placeholder="Institution name" className="w-full bg-white/4 border border-white/10 rounded-[10px] p-3 color-white outline-none focus:border-[#1565f5] transition-all text-[0.88rem]" />
+                <input 
+                  type="text" 
+                  name="institution"
+                  placeholder="Institution name" 
+                  required
+                  className="w-full bg-[#04122a] border border-white/10 rounded-[12px] p-4 text-white placeholder:text-white/30 outline-none focus:border-[#1565f5] focus:ring-1 focus:ring-[#1565f5] transition-all text-[0.9rem] shadow-inner" 
+                />
               </div>
               <div className="group">
                 <label className="block text-[0.72rem] font-bold tracking-[0.09em] uppercase text-[#5aaeff] mb-1.5 px-1">Email Address</label>
-                <input type="email" placeholder="your@email.com" className="w-full bg-white/4 border border-white/10 rounded-[10px] p-3 color-white outline-none focus:border-[#1565f5] transition-all text-[0.88rem]" />
+                <input 
+                  type="email" 
+                  name="email"
+                  placeholder="your@email.com" 
+                  required
+                  className="w-full bg-[#04122a] border border-white/10 rounded-[12px] p-4 text-white placeholder:text-white/30 outline-none focus:border-[#1565f5] focus:ring-1 focus:ring-[#1565f5] transition-all text-[0.9rem] shadow-inner" 
+                />
               </div>
               <div className="group">
                 <label className="block text-[0.72rem] font-bold tracking-[0.09em] uppercase text-[#5aaeff] mb-1.5 px-1">Program of Interest</label>
-                <select className="w-full bg-[#04122a] border border-white/10 rounded-[10px] p-3 color-white outline-none focus:border-[#1565f5] transition-all text-[0.88rem] appearance-none cursor-pointer">
+                <select 
+                  name="program"
+                  className="w-full bg-[#04122a] border border-white/10 rounded-[12px] p-4 text-white outline-none focus:border-[#1565f5] focus:ring-1 focus:ring-[#1565f5] transition-all text-[0.9rem] appearance-none cursor-pointer"
+                >
                   <option value="">Select a program</option>
                   <option>Industry Internship Program</option>
                   <option>Faculty Development Program (FDP)</option>
@@ -71,10 +116,20 @@ const Contact = () => {
               </div>
               <div className="group">
                 <label className="block text-[0.72rem] font-bold tracking-[0.09em] uppercase text-[#5aaeff] mb-1.5 px-1">Message</label>
-                <textarea placeholder="Tell us about your requirements..." className="w-full h-24 bg-white/4 border border-white/10 rounded-[10px] p-3 color-white outline-none focus:border-[#1565f5] transition-all text-[0.88rem] resize-none" />
+                <textarea 
+                  name="message"
+                  placeholder="Tell us about your requirements..." 
+                  required
+                  className="w-full h-32 bg-[#04122a] border border-white/10 rounded-[12px] p-4 text-white placeholder:text-white/30 outline-none focus:border-[#1565f5] focus:ring-1 focus:ring-[#1565f5] transition-all text-[0.9rem] resize-none shadow-inner" 
+                />
               </div>
-              <button className="w-full bg-[#1565f5] text-white font-bold py-3.5 rounded-[12px] text-[0.95rem] font-bricolage transition-all hover:shadow-[0_10px_40px_rgba(21,101,245,0.6)] cursor-pointer hover:translate-y-[-2px] hover:translate-y-[-2px] active:scale-95">Send Message →</button>
-            </div>
+              <button 
+                type="submit"
+                className="w-full bg-[#1565f5] text-white font-bold py-3.5 rounded-[12px] text-[0.95rem] font-bricolage transition-all hover:shadow-[0_10px_40px_rgba(21,101,245,0.6)] cursor-pointer hover:translate-y-[-2px] active:scale-95"
+              >
+                Send Message →
+              </button>
+            </form>
           </motion.div>
         </div>
       </div>
