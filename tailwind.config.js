@@ -25,6 +25,7 @@ export default {
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
         unbounded: ['Unbounded', 'cursive'],
+        bricolage: ['"Bricolage Grotesque"', 'sans-serif'],
       },
     },
   },

@@ -75,11 +75,17 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="flex justify-center items-end"
         >
-          <div className="w-[250px] h-[270px] relative bg-gradient-to-br from-[#143080] to-[#0c1d60] rounded-[22px_22px_8px_8px] shadow-[0_40px_80px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.08)] flex items-center justify-center flex-col gap-2 overflow-hidden overflow-hidden">
-            <div className="absolute top-[-16px] left-1/2 -translate-x-1/2 bg-white text-[#04122a] text-[0.75rem] font-bold px-4 py-1.5 rounded-full whitespace-nowrap shadow-md z-10 transition-all hover:scale-110">VEI Technologies</div>
-            <img src="/assets/images/vei1.png" alt="VEI Team" className="w-full h-full object-cover opacity-70" />
-            <div className="font-semibold text-white text-[0.88rem] absolute bottom-[38px] z-10 drop-shadow-lg">Training Excellence</div>
-            <div className="absolute bottom-[14px] bg-white/10 border border-white/12 px-3 py-1 rounded-lg text-[0.68rem] text-white/65 z-10">✦ Since 2010</div>
+          <div className="w-full max-w-[280px] aspect-[10/11] relative bg-gradient-to-br from-[#143080] to-[#0c1d60] rounded-[22px] shadow-[0_40px_80px_rgba(0,0,0,0.6),0_0_0_1px_rgba(255,255,255,0.08)] flex items-center justify-center flex-col gap-2 overflow-hidden mx-auto">
+            <div className="absolute top-[-10px] left-1/2 -translate-x-1/2 bg-white text-[#04122a] text-[0.7rem] font-bold px-3 py-1 rounded-full whitespace-nowrap shadow-md z-10 transition-all hover:scale-105">VEI Technologies</div>
+            <img 
+              src="/assets/images/vei1.png" 
+              alt="VEI Team" 
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover opacity-80" 
+            />
+            <div className="font-semibold text-white text-[0.8rem] absolute bottom-[34px] z-10 drop-shadow-md">Training Excellence</div>
+            <div className="absolute bottom-[12px] bg-white/10 border border-white/12 px-2.5 py-0.5 rounded-lg text-[0.6rem] text-white/65 z-10">✦ Since 2010</div>
           </div>
         </motion.div>
 

@@ -56,13 +56,14 @@ const Gallery = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
-              className={`relative rounded-[20px] overflow-hidden border border-white/7 aspect-[16/10] cursor-pointer group ${img.wide ? 'md:grid-cols-span-2 md:aspect-[21/9]' : ''}`}
-              style={img.wide ? { gridColumn: 'span 2' } : {}}
+              className={`relative rounded-[20px] overflow-hidden border border-white/7 aspect-[16/10] cursor-pointer group ${img.wide ? 'md:col-span-2 md:aspect-[21/9]' : ''}`}
             >
               <img 
                 src={img.src} 
                 alt={img.alt} 
-                className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:brightness-110" 
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110" 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#04122a]/85 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-5">
                 <div>

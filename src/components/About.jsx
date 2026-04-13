@@ -15,11 +15,13 @@ const About = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <div className="bg-[#0a1f47] rounded-[24px] overflow-hidden border border-white/7 h-[420px] flex items-center justify-center relative shadow-2xl">
+            <div className="bg-[#0a1f47] rounded-[24px] overflow-hidden border border-white/7 aspect-video sm:h-[420px] sm:aspect-auto flex items-center justify-center relative shadow-2xl">
               <img 
                 src="/assets/images/vei4.jpeg" 
                 alt="VEI Technologies Team – Award Ceremony at Siddharth Institute of Engineering" 
-                className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover object-center"
               />
             </div>
             <motion.div 
