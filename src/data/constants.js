@@ -5,6 +5,10 @@ export const profile = {
   email: "veitechinfo2024@gmail.com",
   phone: "+91 90037 85766",
   location: "Chennai, Tamil Nadu, India",
+  socials: {
+    linkedin: "https://www.linkedin.com/in/vei-technologies-pvt-ltd-923616169/",
+    instagram: "https://www.instagram.com/veitechnologies_pvt_ltd/?hl=en"
+  },
   summary: "A visionary entrepreneur who has transformed IT education across India. Awarded a Doctorate by Global Peace University (GAF, USA) in 2018 for social contributions via VEI Technologies (2010–2018).",
   
   stats: {
