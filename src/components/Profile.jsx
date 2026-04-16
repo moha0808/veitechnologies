@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { profile } from '../data/constants';
 import SectionHeader from './SectionHeader';
 
-// Import the leader's photo
-import leaderImg from '../assets/images/leader.jpg';
+// Import the leader's photo (using 3.jpeg as the professional photo)
+import leaderImg from '../assets/images/3.jpeg';
 
 const Profile = () => {
   return (
