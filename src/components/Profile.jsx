@@ -4,7 +4,7 @@ import { profile } from '../data/constants';
 import SectionHeader from './SectionHeader';
 
 // Import the leader's photo (using 3.jpeg as the professional photo)
-import leaderImg from '../assets/images/3.jpeg';
+import leaderImg from '../assets/images/MOU Images/12.jpeg';
 
 const Profile = () => {
   return (
